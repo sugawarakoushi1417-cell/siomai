@@ -10,7 +10,7 @@ export class AppService {
   }
   
   getIndexHtml(): string {
-    const pathToHtml = join(__dirname, '..', 'public', 'index.html');
+    const pathToHtml = join(__dirname, '..', 'frontend', 'index.html');
     return readFileSync(pathToHtml, { encoding: 'utf-8' });
   }
 }
