@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - CCS Laboratory</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <h1>💻 IT Equipment Management</h1>
+                <p>College of Computer Studies</p>
+            </div>
+            <div class="user-info">
+                <span id="userName"></span>
+                <button onclick="logout()" class="logout-btn">Logout</button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3 id="statTotal">0</h3>
+                <p>Total Equipment</p>
+            </div>
+            <div class="stat-card green">
+                <h3 id="statAvailable">0</h3>
+                <p>Available</p>
+            </div>
+            <div class="stat-card blue">
+                <h3 id="statInUse">0</h3>
+                <p>In Use</p>
+            </div>
+            <div class="stat-card orange">
+                <h3 id="statMaintenance">0</h3>
+                <p>Maintenance</p>
+            </div>
+            <div class="stat-card purple">
+                <h3 id="statLabs">0</h3>
+                <p>Laboratories</p>
+            </div>
+        </div>
+
+        <!-- Add Equipment Form -->
+        <div class="section">
+            <h2>➕ Add New Equipment</h2>
+            <form id="addForm" class="form-grid">
+                <input type="text" id="eqName" placeholder="Equipment Name" required>
+                <input type="text" id="eqBrand" placeholder="Brand">
+                <input type="text" id="eqModel" placeholder="Model">
+                <input type="text" id="eqSerial" placeholder="Serial Number">
+                <select id="eqLab" required>
+                    <option value="">Select Laboratory</option>
+                </select>
+                <select id="eqCategory">
+                    <option value="Computer">Computer</option>
+                    <option value="Network">Network</option>
+                    <option value="Display">Display</option>
+                    <option value="Peripheral">Peripheral</option>
+                    <option value="Development">Development</option>
+                    <option value="Server">Server</option>
+                    <option value="Audio">Audio</option>
+                </select>
+                <select id="eqStatus">
+                    <option value="available">Available</option>
+                    <option value="in_use">In Use</option>
+                    <option value="maintenance">Maintenance</option>
+                    <option value="broken">Broken</option>
+                </select>
+                <input type="date" id="eqDate">
+                <button type="submit" class="btn-submit">Add Equipment</button>
+            </form>
+        </div>
+
+        <!-- Equipment List -->
+        <div class="section">
+            <h2>📋 Equipment Inventory</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Brand/Model</th>
+                            <th>Serial</th>
+                            <th>Lab</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="equipmentTable">
+                        <tr><td colspan="8" class="empty">Loading...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
