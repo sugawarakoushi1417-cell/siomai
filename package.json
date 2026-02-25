@@ -29,10 +29,11 @@
     "typeorm": "^0.3.28"
   },
   "devDependencies": {
-    "@nestjs/cli": "^11.0.0",
-    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/cli": "^7.6.0",
+    "@nestjs/schematics": "^7.3.1",
     "@nestjs/testing": "^11.0.1",
     "@types/node": "^22.10.7",
+      "@types/jest": "^29.5.3",
     "eslint": "^9.18.0",
     "jest": "^30.0.0",
     "prettier": "^3.4.2",

@@ -1,5 +1,4 @@
 <?php
-// Database configuration - Railway MySQL
 $host = 'tramway.proxy.rlwy.net';
 $port = 26850;
 $dbname = 'railway';
@@ -11,7 +10,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    die(json_encode(['error' => 'Connection failed: ' . $e->getMessage()]));
 }
 
 session_start();
